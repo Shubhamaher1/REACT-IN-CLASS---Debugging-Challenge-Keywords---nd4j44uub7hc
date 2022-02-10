@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/App.css";
 
 const App = () => {
@@ -6,15 +6,20 @@ const App = () => {
 
   return (
     <div class="ball">
-      <h1 class="count" onDoubleClick={() => alert("cant edit it")}>
+      <h1
+        class="count"
+        onDoubleClick={() => {
+          alert("cant edit it");
+        }}
+      >
         {count}
       </h1>
       <button
         class="increment-button"
-        onClick={
-          (event) => setCount(count + 1)
-          // console.log("button clicked");
-        }
+        onClick={(event) => {
+          setCount(count + 1);
+          console.log("button clicked");
+        }}
       >
         Increment
       </button>
